@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+</head>
+<body style="background: linear-gradient(135deg, #6e8efb, #a777e3); margin: 0; font-family: Arial, sans-serif;">
+
+
+    <table width="100%" height="100%">
+        <tr>
+            <td align="center" valign="middle">
+
+                <table bgcolor="#FFFFFF" border="0" cellpadding="40" cellspacing="0" style="border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                    <tr>
+                        <td align="center">
+
+                            <h2 style="color: #0074D9; margin-bottom: 20px; font-size: 24px;">📝 Cadastre-se</h2>
+
+
+                            <form action="/register" method="POST">
+
+                                <div style="margin-bottom: 15px;">
+                                    <label for="name" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">👤 Nome Completo:</label>
+                                    <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
+                                </div>
+
+
+                                <div style="margin-bottom: 15px;">
+                                    <label for="email" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">📧 E-mail:</label>
+                                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
+                                </div>
+
+
+                                <div style="margin-bottom: 15px;">
+                                    <label for="password" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">🔒 Senha:</label>
+                                    <input type="password" id="password" name="password" placeholder="Crie uma senha" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
+                                </div>
+
+
+                                <div style="margin-bottom: 20px;">
+                                    <label for="confirm-password" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">🔐 Confirmar Senha:</label>
+                                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme sua senha" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
+                                </div>
+
+
+                                <p id="error-message" style="color: red; font-size: 14px; text-align: center; margin-bottom: 15px; display: none;">
+                                    As senhas não coincidem.
+                                </p>
+
+
+                                <button type="submit" style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: #FFFFFF; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; transition: transform 0.3s ease;">
+                                    Cadastrar 🚀
+                                </button>
+                            </form>
+
+
+                            <p style="margin-top: 20px; font-size: 14px; color: #666; text-align: center;">
+                                Já tem conta? <a href="login.html" style="color: #0074D9; text-decoration: none; font-weight: bold;">Faça login aqui</a>.
+                            </p>
+                            <p style="font-size: 14px; color: #666; text-align: center;">
+                                Esqueceu sua senha? <a href="recuperar-senha.html" style="color: #0074D9; text-decoration: none; font-weight: bold;">Recuperar</a>.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
