@@ -3,64 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Cadastro</title>
+    <title>Cadastro</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        td {
+            padding: 40px;
+        }
+        h2 {
+            color: #0074D9;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 90%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        button {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+        a {
+            color: #0074D9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #error-message {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
 </head>
-<body style="background: linear-gradient(135deg, #6e8efb, #a777e3); margin: 0; font-family: Arial, sans-serif;">
-
+<body>
 
     <table width="100%" height="100%">
         <tr>
             <td align="center" valign="middle">
-
-                <table bgcolor="#FFFFFF" border="0" cellpadding="40" cellspacing="0" style="border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <table bgcolor="#FFFFFF" border="0" cellpadding="40" cellspacing="0">
                     <tr>
                         <td align="center">
+                            <h2>📝 Cadastro</h2>
 
-                            <h2 style="color: #0074D9; margin-bottom: 20px; font-size: 24px;">📝 Cadastre-se</h2>
-
-
-                            <form action="/register" method="POST">
-
+                            <form action="../controller/CadastroController.php" method="POST" id="registerForm">
                                 <div style="margin-bottom: 15px;">
-                                    <label for="name" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">👤 Nome Completo:</label>
-                                    <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
+                                    <label for="fullname">👤 Usuário:</label>
+                                    <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
                                 </div>
-
-
                                 <div style="margin-bottom: 15px;">
-                                    <label for="email" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">📧 E-mail:</label>
-                                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
+                                    <label for="email">📧 Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                                 </div>
-
-
                                 <div style="margin-bottom: 15px;">
-                                    <label for="password" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">🔒 Senha:</label>
-                                    <input type="password" id="password" name="password" placeholder="Crie uma senha" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
+                                    <label for="password">🔒 Senha:</label>
+                                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                                 </div>
-
-
-                                <div style="margin-bottom: 20px;">
-                                    <label for="confirm-password" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px;">🔐 Confirmar Senha:</label>
-                                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme sua senha" required style="width: 90%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s ease;">
-                                </div>
-
-
-                                <p id="error-message" style="color: red; font-size: 14px; text-align: center; margin-bottom: 15px; display: none;">
-                                    As senhas não coincidem.
-                                </p>
-
-
-                                <button type="submit" style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: #FFFFFF; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; transition: transform 0.3s ease;">
-                                    Cadastrar 🚀
-                                </button>
+                                <p id="error-message"></p>
+                                <button type="submit">Cadastrar 🚀</button>
                             </form>
 
-
-                            <p style="margin-top: 20px; font-size: 14px; color: #666; text-align: center;">
-                                Já tem conta? <a href="login.html" style="color: #0074D9; text-decoration: none; font-weight: bold;">Faça login aqui</a>.
-                            </p>
-                            <p style="font-size: 14px; color: #666; text-align: center;">
-                                Esqueceu sua senha? <a href="recuperar-senha.html" style="color: #0074D9; text-decoration: none; font-weight: bold;">Recuperar</a>.
+                            <p>
+                                Já tem conta? <a href="login.html">Faça login aqui</a>.
                             </p>
                         </td>
                     </tr>
@@ -68,5 +105,41 @@
             </td>
         </tr>
     </table>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !email || !password) {
+                document.getElementById('error-message').innerText = 'Preencha todos os campos.';
+                document.getElementById('error-message').style.display = 'block';
+                return;
+            }
+
+            fetch('/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Cadastro realizado com sucesso!');
+                    window.location.href = 'login.html';
+                } else {
+                    document.getElementById('error-message').innerText = data.message;
+                    document.getElementById('error-message').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                document.getElementById('error-message').innerText = 'Erro';
+                document.getElementById('error-message').style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
